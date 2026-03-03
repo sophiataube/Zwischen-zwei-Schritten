@@ -2,25 +2,115 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audiowalk</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 24px;
+      line-height: 1.6;
+      background: white;
+      color: #111;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 18px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: black;
+      color: white;
+      cursor: pointer;
+    }
+
+    #audioBox {
+      display: none;
+      margin-top: 30px;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
 
-<p>Hey! Du hast gerade einen Audiowalk gefunden.</p>
+    <p>Hey! Du hast gerade einen Audiowalk gefunden.</p>
 
-<p>Vielleicht bist du auf dem Weg irgendwohin.  
-Oder du wartest auf jemanden.  
-Vielleicht hast du gerade Mittagspause.</p>
+    <p>
+      Vielleicht bist du auf dem Weg irgendwohin.<br>
+      Oder du wartest auf jemanden.<br>
+      Vielleicht hast du gerade Mittagspause.<br>
+      Oder gehst jeden Tag hier entlang, hast heute nur einmal aufgeblickt.
+      Vielleicht hast du den QR-Code zufällig entdeckt und weißt noch nicht, ob du überhaupt Zeit hast.
+    </p>
 
-<p>Dieser Walk dauert etwa 17 Minuten.  
-Er beginnt hier und endet ein Stück weiter im Park.</p>
+    <p>Wir haben meist sehr wenig Zeit.</p>
 
-<p>Du wirst einem Kind folgen.  
-Mit einem Kind zu gehen, verändert die Geschwindigkeit.</p>
+    <p>
+      Dieser Walk dauert etwa 12 Minuten.<br>
+      Er beginnt hier und endet ein Stück weiter im Park.
+    </p>
 
-<p>Wenn du Kopfhörer dabei hast, setze sie jetzt auf und starte die Audio.</p>
+    <p>
+      Du wirst einem Kind folgen.<br>
+      Mit einem Kind zu gehen, verändert die Geschwindigkeit.<br>
+      Ein Weg, der sonst nur ein Übergang ist, wird plötzlich zu einem Ort.<br>
+      Die Aufmerksamkeit verschiebt sich.
+    </p>
 
-<p><a href="audiowalk.mp3">▶ Audiowalk starten</a></p>
+    <p>
+      Ein Kind erklärt dir nicht, wo du bist oder wo du sein solltest.
+      Es zeigt dir einfach, was es sieht.
+    </p>
+
+    <p>
+      Es gibt hier keine Sehenswürdigkeiten, kein Ziel und keinen richtigen Weg.
+    </p>
+
+    <p>
+      Du bist eingeladen, langsamer zu werden.<br>
+      Folge den indirekten Anweisungen, wenn es sich für dich richtig anfühlt
+      und wenn es dir deine Komfortzone erlaubt.
+      Renne mit uns, bleibe stehen, trinke von einer Quelle, spiele mit einem Stock.
+    </p>
+
+    <p>
+      Für 12 Minuten musst du nichts leisten. Und nichts verstehen.
+    </p>
+
+    <p>
+      Wenn du Kopfhörer dabei hast, setze sie jetzt auf und starte die Audio.
+    </p>
+
+    <button onclick="showAudio()">Weiter</button>
+
+    <div id="audioBox">
+      <h3>Audiowalk starten</h3>
+      <audio controls>
+        <source src="audiowalk.mp3" type="audio/mpeg">
+        Dein Browser unterstützt kein Audio.
+      </audio>
+    </div>
+
+  </div>
+
+  <script>
+    function showAudio() {
+      document.getElementById("audioBox").style.display = "block";
+      event.target.style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
